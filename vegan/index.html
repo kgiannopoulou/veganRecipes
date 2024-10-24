@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Vegan Recipes</title>
+</head>
+
+<body>
+    <nav>
+        <label class="logo">Vegan Recipes</label>
+        <ul>
+
+            <li class="active"><a href="http://127.0.0.1:5501/index.html">Home</a></li>
+            <li><a href="http://127.0.0.1:5501/breakfast.html">Breakfast</a></li>
+            <li><a href="http://127.0.0.1:5501/lunch.html">Lunch</a></li>
+            <li><a href="http://127.0.0.1:5501/dinner.html">Dinner</a></li>
+            <li><a href="http://127.0.0.1:5501/about.html">About</a></li>
+            <li><a href="http://127.0.0.1:5501/contact.html">Contact us</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container-fluid" id="card">
+        <div class="container">
+            <div class="search">
+                <h1>Cook Yumm Recipes....</h1>
+                <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+            </div>
+            <div class="Recipes-list">
+                <div class="Recipes">
+                    <a><img src="images/Vegan_Lentil_Curry.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Lentil Curry</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Chickpea Salad Wraps.jpg" width="300px" height="200p"></a>
+                    <h3 style="text-align: center;">Chickpea Salad Wraps</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Mushroom Stroganoff.jpg"
+                            width="300px" height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Mushroom Stroganoff</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Sweet Potato and Black Bean Tacos.jpg" width="400px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Sweet Potato and Black Bean Tacos</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Buddha Bowl.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Buddha Bowl</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Alfredo Pasta.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Alfredo Pasta</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Chili.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Chili</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Stuffed Bell Peppers.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Stuffed Bell Peppers</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Pancakes.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Pancakes</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Cauliflower Buffalo Wings.jpg" width="400px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Cauliflower Buffalo Wings</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Burrito Bowl.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Burrito Bowl</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Pad Thai.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Pad Thai</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Creamy Tomato Soup.jpg" width="400px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Creamy Tomato Soup</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Falafel.jpg"
+                            width="300px" height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Falafel</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Chocolate Avocado Mousse.jpg"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Chocolate Avocado Mousse</h3>
+                </div>
+                <div class="Recipes">
+                    <a><img src="images/Vegan Baked Mac and Cheese.jpg" width="300px"
+                            height="200p"></a>
+                    <h3 style="text-align: center;">Vegan Baked Mac and Cheese</h3>
+                </div>
+                
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--Javascript-->
+    <script type="text/javascript">
+        function search() {
+            let filter = document.getElementById('find').value.toUpperCase();
+            let item = document.querySelectorAll('.Recipes');
+            let l = document.getElementsByTagName('h3');
+            for (var i = 0; i <= l.length; i++) {
+                let a = item[i].getElementsByTagName('h3')[0];
+                let value = a.innerHTML || a.innerText || a.textContent;
+                if (value.toUpperCase().indexOf(filter) > -1) {
+                    item[i].style.display = "";
+                }
+                else {
+                    item[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
